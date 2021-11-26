@@ -65,12 +65,25 @@
               >
                 <router-link
                     aria-expanded="false"
-                    to="/student_ledger"
+                    to="/banking"
                 >
                   <i class="i-Students text-20 mr-2 text-muted" /><span
                     class="item-name text-15 text-muted"
                     title="Ctrl+Shift+S"
-                >Banking</span>
+                >Sent Money</span>
+                </router-link>
+              </li>
+              <li
+                  class="Ul_li--hover"
+              >
+                <router-link
+                    aria-expanded="false"
+                    to="/banking"
+                >
+                  <i class="i-Students text-20 mr-2 text-muted" /><span
+                    class="item-name text-15 text-muted"
+                    title="Ctrl+Shift+S"
+                >Received Money</span>
                 </router-link>
               </li>
               <li class="Ul_li--hover">

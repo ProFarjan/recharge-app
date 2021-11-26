@@ -16,8 +16,14 @@ export default new Router({
       component: require('@/components/Dashboard').default
     },
     {
-      path: '*',
-      redirect: '/'
+      path: '/recharge',
+      name: 'recharge',
+      component: require('@/components/Recharge').default
+    },
+    {
+      path: '/banking',
+      name: 'banking',
+      component: require('@/components/Banking').default
     }
   ]
 })

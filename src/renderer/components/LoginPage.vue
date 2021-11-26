@@ -23,19 +23,21 @@
               >
                 {{ message }}
               </div>
-              <form @submit.prevent="handleLogin">
+              <form @submit.stop.prevent="handleLogin">
                 <div class="form-group div_txt">
                   <label for="username">Username</label>
                   <b-form-input
                       id="username"
+                      ref="username"
                       v-model="user.username"
-                      class="form-control form-control-rounded"
-                      type="text"
+                      v-validate="{ required: true }"
                       name="username"
-                      v-validate="{ required: true}"
                       :state="validateState('username')"
                       aria-describedby="Username"
-                      data-vv-as="Username"></b-form-input>
+                      data-vv-as="Username"
+                      trim
+                      autofocus
+                  />
                   <b-form-invalid-feedback>{{ veeErrors.first('username') }}</b-form-invalid-feedback>
                 </div>
                 <div class="form-group div_txt">
@@ -43,7 +45,6 @@
                   <b-form-input
                       id="password"
                       v-model="user.password"
-                      class="form-control form-control-rounded"
                       type="password"
                       name="password"
                       v-validate="{ required: true }"

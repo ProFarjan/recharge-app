@@ -22,9 +22,9 @@ Vue.prototype.$screenSize = screen.width
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
+Vue.use(BootstrapVue)
 Vue.use(VueCompositionAPI)
 Vue.component('vue-ladda', VueLadda)
-Vue.use(BootstrapVue)
 Vue.component('v-select', vSelect)
 Vue.use(VeeValidate, {
   inject: true,
