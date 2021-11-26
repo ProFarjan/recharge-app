@@ -148,13 +148,6 @@
   dependencies:
     debug "^4.3.2"
 
-"@serialport/binding-abstract@^8.0.6":
-  version "8.0.6"
-  resolved "https://registry.npmjs.org/@serialport/binding-abstract/-/binding-abstract-8.0.6.tgz"
-  integrity sha512-1swwUVoRyQ9ubxrkJ8JPppykohUpTAP4jkGr36e9NjbVocSPfqeX6tFZFwl/IdUlwJwxGdbKDqq7FvXniCQUMw==
-  dependencies:
-    debug "^4.1.1"
-
 "@serialport/binding-mock@9.2.4":
   version "9.2.4"
   resolved "https://registry.npmjs.org/@serialport/binding-mock/-/binding-mock-9.2.4.tgz"
@@ -162,14 +155,6 @@
   dependencies:
     "@serialport/binding-abstract" "9.2.3"
     debug "^4.3.2"
-
-"@serialport/binding-mock@^8.0.6":
-  version "8.0.6"
-  resolved "https://registry.npmjs.org/@serialport/binding-mock/-/binding-mock-8.0.6.tgz"
-  integrity sha512-BIbY5/PsDDo0QWDNCCxDgpowAdks+aZR8BOsEtK2GoASTTcJCy1fBwPIfH870o7rnbH901wY3C+yuTfdOvSO9A==
-  dependencies:
-    "@serialport/binding-abstract" "^8.0.6"
-    debug "^4.1.1"
 
 "@serialport/bindings@9.2.7":
   version "9.2.7"
@@ -183,47 +168,20 @@
     nan "^2.15.0"
     prebuild-install "^6.1.4"
 
-"@serialport/bindings@^8.0.8":
-  version "8.0.8"
-  resolved "https://registry.npmjs.org/@serialport/bindings/-/bindings-8.0.8.tgz"
-  integrity sha512-xMJHr7CyOPq+wwC/S2RNI+tY+WZW4gXY3tE8QUOIRp0K7lSyLYOzKdyGUtk2uI0ohDMV3OcB+TEhhffT2S2DHQ==
-  dependencies:
-    "@serialport/binding-abstract" "^8.0.6"
-    "@serialport/parser-readline" "^8.0.6"
-    bindings "^1.5.0"
-    debug "^4.1.1"
-    nan "^2.14.0"
-    prebuild-install "^5.3.0"
-
 "@serialport/parser-byte-length@9.2.4":
   version "9.2.4"
   resolved "https://registry.npmjs.org/@serialport/parser-byte-length/-/parser-byte-length-9.2.4.tgz"
   integrity sha512-sQD/iw4ZMU3xW9PLi0/GlvU6Y623jGeWecbMkO7izUo/6P7gtfv1c9ikd5h0kwL8AoAOpQA1lxdHIKox+umBUg==
-
-"@serialport/parser-byte-length@^8.0.6":
-  version "8.0.6"
-  resolved "https://registry.npmjs.org/@serialport/parser-byte-length/-/parser-byte-length-8.0.6.tgz"
-  integrity sha512-92mrFxFEvq3gRvSM7ANK/jfbmHslz91a5oYJy/nbSn4H/MCRXjxR2YOkQgVXuN+zLt+iyDoW3pcOP4Sc1nWdqQ==
 
 "@serialport/parser-cctalk@9.2.4":
   version "9.2.4"
   resolved "https://registry.npmjs.org/@serialport/parser-cctalk/-/parser-cctalk-9.2.4.tgz"
   integrity sha512-T4TU5vQMwmo9AB3gQLFDWbfJXlW5jd9guEsB/nqKjFHTv0FXPdZ7DQ2TpSp8RnHWxU3GX6kYTaDO20BKzc8GPQ==
 
-"@serialport/parser-cctalk@^8.0.6":
-  version "8.0.6"
-  resolved "https://registry.npmjs.org/@serialport/parser-cctalk/-/parser-cctalk-8.0.6.tgz"
-  integrity sha512-pqtCYQPgxnxHygiXUPCfgX7sEx+fdR/ObjpscidynEULUq2fFrC5kBkrxRbTfHRtTaU2ii9DyjFq0JVRCbhI0Q==
-
 "@serialport/parser-delimiter@9.2.4":
   version "9.2.4"
   resolved "https://registry.npmjs.org/@serialport/parser-delimiter/-/parser-delimiter-9.2.4.tgz"
   integrity sha512-4nvTAoYAgkxFiXrkI+3CA49Yd43CODjeszh89EK+I9c8wOZ+etZduRCzINYPiy26g7zO+GRAb9FoPCsY+sYcbQ==
-
-"@serialport/parser-delimiter@^8.0.6":
-  version "8.0.6"
-  resolved "https://registry.npmjs.org/@serialport/parser-delimiter/-/parser-delimiter-8.0.6.tgz"
-  integrity sha512-ogKOcPisPMlVtirkuDu3SFTF0+xT0ijxoH7XjpZiYL41EVi367MwuCnEmXG+dEKKnF0j9EPqOyD2LGSJxaFmhQ==
 
 "@serialport/parser-inter-byte-timeout@9.2.4":
   version "9.2.4"
@@ -237,32 +195,15 @@
   dependencies:
     "@serialport/parser-delimiter" "9.2.4"
 
-"@serialport/parser-readline@^8.0.6":
-  version "8.0.6"
-  resolved "https://registry.npmjs.org/@serialport/parser-readline/-/parser-readline-8.0.6.tgz"
-  integrity sha512-OYBT2mpczh9QUI3MTw8j0A0tIlPVjpVipvuVnjRkYwxrxPeq04RaLFhaDpuRzua5rTKMt89c1y3btYeoDXMjAA==
-  dependencies:
-    "@serialport/parser-delimiter" "^8.0.6"
-
 "@serialport/parser-ready@9.2.4":
   version "9.2.4"
   resolved "https://registry.npmjs.org/@serialport/parser-ready/-/parser-ready-9.2.4.tgz"
   integrity sha512-Pyi94Itjl6qAURwIZr/gmZpMAyTmKXThm6vL5DoAWGQjcRHWB0gwv2TY2v7N+mQLJYUKU3cMnvnATXxHm7xjxw==
 
-"@serialport/parser-ready@^8.0.6":
-  version "8.0.6"
-  resolved "https://registry.npmjs.org/@serialport/parser-ready/-/parser-ready-8.0.6.tgz"
-  integrity sha512-xcEqv4rc119WR5JzAuu8UeJOlAwET2PTdNb6aIrrLlmTxhvuBbuRFcsnF3BpH9jUL30Kh7a6QiNXIwVG+WR/1Q==
-
 "@serialport/parser-regex@9.2.4":
   version "9.2.4"
   resolved "https://registry.npmjs.org/@serialport/parser-regex/-/parser-regex-9.2.4.tgz"
   integrity sha512-sI/cVvPOYz+Dbv4ZdnW16qAwvXiFf/1pGASQdbveRTlgJDdz7sRNlCBifzfTN2xljwvCTZYqiudKvDdC1TepRQ==
-
-"@serialport/parser-regex@^8.0.6":
-  version "8.0.6"
-  resolved "https://registry.npmjs.org/@serialport/parser-regex/-/parser-regex-8.0.6.tgz"
-  integrity sha512-J8KY75Azz5ZyExmyM5YfUxbXOWBkZCytKgCCmZ966ttwZS0bUZOuoCaZj2Zp4VILJAiLuxHoqc0foi67Fri5+g==
 
 "@serialport/stream@9.2.4":
   version "9.2.4"
@@ -270,13 +211,6 @@
   integrity sha512-bLye8Ub4vUFQGmkh8qEqehr7SE7EJs2yDs0h9jzuL5oKi+F34CFmWkEErO8GAOQ8YNn7p6b3GxUgs+0BrHHDZQ==
   dependencies:
     debug "^4.3.2"
-
-"@serialport/stream@^8.0.6":
-  version "8.0.6"
-  resolved "https://registry.npmjs.org/@serialport/stream/-/stream-8.0.6.tgz"
-  integrity sha512-ym1PwM0rwLrj90vRBB66I1hwMXbuMw9wGTxqns75U3N/tuNFOH85mxXaYVF2TpI66aM849NoI1jMm50fl9equg==
-  dependencies:
-    debug "^4.1.1"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -387,7 +321,7 @@
   optionalDependencies:
     prettier "^1.18.2 || ^2.0.0"
 
-"@vue/composition-api@^1.0.5":
+"@vue/composition-api@^1.4.0":
   version "1.4.0"
   resolved "https://registry.npmjs.org/@vue/composition-api/-/composition-api-1.4.0.tgz"
   integrity sha512-fanqJw1cqhkfS1dcpFY52CeR0aWDBr7ub/0ObPWqMnNPdRsMi1gX04Q3aLeRtJEuVeCFewNbqvkPskkSPTVaXQ==
@@ -798,18 +732,6 @@ anymatch@~3.1.2:
   dependencies:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
-
-apexcharts@^3.27.3:
-  version "3.30.0"
-  resolved "https://registry.npmjs.org/apexcharts/-/apexcharts-3.30.0.tgz"
-  integrity sha512-NHhFjkd4sqoQqHi+ECN/duVCRvqVZMdXX/UBzCs1xriq8NbNLvs+nIM8OXH1Siv+W50FrK1uTDZrW2cLsKWhBQ==
-  dependencies:
-    svg.draggable.js "^2.2.2"
-    svg.easing.js "^2.0.0"
-    svg.filter.js "^2.0.2"
-    svg.pathmorphing.js "^0.1.3"
-    svg.resize.js "^1.4.3"
-    svg.select.js "^3.0.1"
 
 app-builder-bin@2.7.1:
   version "2.7.1"
@@ -2845,11 +2767,6 @@ chardet@^0.4.0:
   resolved "https://registry.npmjs.org/chardet/-/chardet-0.4.2.tgz"
   integrity sha1-tUc7M9yXxCTl2Y3IfVXU2KKci/I=
 
-chart.js@^3.5.0:
-  version "3.6.0"
-  resolved "https://registry.npmjs.org/chart.js/-/chart.js-3.6.0.tgz"
-  integrity sha512-iOzzDKePL+bj+ccIsVAgWQehCXv8xOKGbaU2fO/myivH736zcx535PGJzQGanvcSGVOqX6yuLZsN3ygcQ35UgQ==
-
 check-error@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/check-error/-/check-error-1.0.2.tgz"
@@ -4199,7 +4116,7 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
-echarts@^5.1.2:
+echarts@^5.2.2:
   version "5.2.2"
   resolved "https://registry.npmjs.org/echarts/-/echarts-5.2.2.tgz"
   integrity sha512-yxuBfeIH5c+0FsoRP60w4De6omXhA06c7eUYBsC1ykB6Ys2yK5fSteIYWvkJ4xJVLQgCvAdO8C4mN6MLeJpBaw==
@@ -6509,6 +6426,11 @@ inline-source-map@~0.6.0:
   dependencies:
     source-map "~0.5.3"
 
+inputmask@^3.3.8:
+  version "3.3.11"
+  resolved "https://registry.npmjs.org/inputmask/-/inputmask-3.3.11.tgz"
+  integrity sha1-FCHJSuKMPc0bTSYze1CLs0mY4tg=
+
 inquirer@^3.0.6, inquirer@~3.3.0:
   version "3.3.0"
   resolved "https://registry.npmjs.org/inquirer/-/inquirer-3.3.0.tgz"
@@ -8278,7 +8200,7 @@ mute-stream@0.0.7:
   resolved "https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.7.tgz"
   integrity sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
 
-nan@^2.12.1, nan@^2.14.0, nan@^2.15.0:
+nan@^2.12.1, nan@^2.15.0:
   version "2.15.0"
   resolved "https://registry.npmjs.org/nan/-/nan-2.15.0.tgz"
   integrity sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==
@@ -8349,7 +8271,7 @@ no-case@^2.2.0, no-case@^2.3.2:
   dependencies:
     lower-case "^1.1.1"
 
-node-abi@^2.21.0, node-abi@^2.7.0:
+node-abi@^2.21.0:
   version "2.30.1"
   resolved "https://registry.npmjs.org/node-abi/-/node-abi-2.30.1.tgz"
   integrity sha512-/2D0wOQPgaUWzVSVgRMx+trKJRC2UG4SUc4oCJoXx9Uxjtp0Vy3/kt7zcbxHF8+Z/pK3UloLWzBISg72brfy1w==
@@ -8442,13 +8364,6 @@ node-loader@^0.6.0:
   resolved "https://registry.npmjs.org/node-loader/-/node-loader-0.6.0.tgz"
   integrity sha1-x5fvUQle1YWZArFX9jhPY2HgWug=
 
-node-pdu@^1.0.15:
-  version "1.0.15"
-  resolved "https://registry.npmjs.org/node-pdu/-/node-pdu-1.0.15.tgz"
-  integrity sha512-e/J8WNV5A+/jMYaUBgM3VnPKBjy8HPs0rB3zgnF3lsE1ljd9P8FddtXItWBeawAM0Q6w/1ckrhnHi98hUhN28A==
-  dependencies:
-    sprintf "~0.1.5"
-
 node-uuid@~1.4.7:
   version "1.4.8"
   resolved "https://registry.npmjs.org/node-uuid/-/node-uuid-1.4.8.tgz"
@@ -8509,11 +8424,6 @@ nodemailer@^2.5.0:
     nodemailer-smtp-pool "2.8.2"
     nodemailer-smtp-transport "2.7.2"
     socks "1.1.9"
-
-noop-logger@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.npmjs.org/noop-logger/-/noop-logger-0.1.1.tgz"
-  integrity sha1-lKKxYzxPExdVMAfYlm/Q6EG2pMI=
 
 nopt@3.x:
   version "3.0.6"
@@ -9562,27 +9472,6 @@ postcss@^7.0.36:
     picocolors "^0.2.1"
     source-map "^0.6.1"
 
-prebuild-install@^5.3.0:
-  version "5.3.6"
-  resolved "https://registry.npmjs.org/prebuild-install/-/prebuild-install-5.3.6.tgz"
-  integrity sha512-s8Aai8++QQGi4sSbs/M1Qku62PFK49Jm1CbgXklGz4nmHveDq0wzJkg7Na5QbnO1uNH8K7iqx2EQ/mV0MZEmOg==
-  dependencies:
-    detect-libc "^1.0.3"
-    expand-template "^2.0.3"
-    github-from-package "0.0.0"
-    minimist "^1.2.3"
-    mkdirp-classic "^0.5.3"
-    napi-build-utils "^1.0.1"
-    node-abi "^2.7.0"
-    noop-logger "^0.1.1"
-    npmlog "^4.0.1"
-    pump "^3.0.0"
-    rc "^1.2.7"
-    simple-get "^3.0.3"
-    tar-fs "^2.0.0"
-    tunnel-agent "^0.6.0"
-    which-pm-runs "^1.0.0"
-
 prebuild-install@^6.1.4:
   version "6.1.4"
   resolved "https://registry.npmjs.org/prebuild-install/-/prebuild-install-6.1.4.tgz"
@@ -10564,30 +10453,6 @@ serialize-javascript@^4.0.0:
   dependencies:
     randombytes "^2.1.0"
 
-serialport-gsm@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.npmjs.org/serialport-gsm/-/serialport-gsm-3.4.1.tgz"
-  integrity sha512-P0BNw9wTorF7yVnA6SiVZ9CWlK1mdyvQct7Zo0+T8Sl0Osq6ar6WEq/6GVB/F8xrYxH33ItIDSRBNso39HGSfA==
-  dependencies:
-    node-pdu "^1.0.15"
-    serialport "^8.0.8"
-
-serialport@^8.0.8:
-  version "8.0.8"
-  resolved "https://registry.npmjs.org/serialport/-/serialport-8.0.8.tgz"
-  integrity sha512-GEaMYbAk9chfGyxoVC27PHnKMUMOQOCAg+9umOhAgk88vH0H6DbQ9/Tj3lRwoj7lE+TLra75P/0l1RXMfX4yQg==
-  dependencies:
-    "@serialport/binding-mock" "^8.0.6"
-    "@serialport/bindings" "^8.0.8"
-    "@serialport/parser-byte-length" "^8.0.6"
-    "@serialport/parser-cctalk" "^8.0.6"
-    "@serialport/parser-delimiter" "^8.0.6"
-    "@serialport/parser-readline" "^8.0.6"
-    "@serialport/parser-ready" "^8.0.6"
-    "@serialport/parser-regex" "^8.0.6"
-    "@serialport/stream" "^8.0.6"
-    debug "^4.1.1"
-
 serialport@^9.2.7:
   version "9.2.7"
   resolved "https://registry.npmjs.org/serialport/-/serialport-9.2.7.tgz"
@@ -11079,11 +10944,6 @@ sprintf-js@~1.0.2:
   resolved "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-sprintf@~0.1.5:
-  version "0.1.5"
-  resolved "https://registry.npmjs.org/sprintf/-/sprintf-0.1.5.tgz"
-  integrity sha1-j4PjmpMXwaUCy324BQ5Rxnn27c8=
-
 sshpk@^1.7.0:
   version "1.16.1"
   resolved "https://registry.npmjs.org/sshpk/-/sshpk-1.16.1.tgz"
@@ -11386,61 +11246,6 @@ supports-color@~5.0.0:
   integrity sha512-7FQGOlSQ+AQxBNXJpVDj8efTA/FtyB5wcNE1omXXJ0cq6jm1jjDwuROlYDbnzHqdNPqliWFhcioCWSyav+xBnA==
   dependencies:
     has-flag "^2.0.0"
-
-svg.draggable.js@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.npmjs.org/svg.draggable.js/-/svg.draggable.js-2.2.2.tgz"
-  integrity sha512-JzNHBc2fLQMzYCZ90KZHN2ohXL0BQJGQimK1kGk6AvSeibuKcIdDX9Kr0dT9+UJ5O8nYA0RB839Lhvk4CY4MZw==
-  dependencies:
-    svg.js "^2.0.1"
-
-svg.easing.js@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/svg.easing.js/-/svg.easing.js-2.0.0.tgz"
-  integrity sha1-iqmUawqOJ4V6XEChDrpAkeVpHxI=
-  dependencies:
-    svg.js ">=2.3.x"
-
-svg.filter.js@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.npmjs.org/svg.filter.js/-/svg.filter.js-2.0.2.tgz"
-  integrity sha1-kQCOFROJ3ZIwd5/L5uLJo2LRwgM=
-  dependencies:
-    svg.js "^2.2.5"
-
-svg.js@>=2.3.x, svg.js@^2.0.1, svg.js@^2.2.5, svg.js@^2.4.0, svg.js@^2.6.5:
-  version "2.7.1"
-  resolved "https://registry.npmjs.org/svg.js/-/svg.js-2.7.1.tgz"
-  integrity sha512-ycbxpizEQktk3FYvn/8BH+6/EuWXg7ZpQREJvgacqn46gIddG24tNNe4Son6omdXCnSOaApnpZw6MPCBA1dODA==
-
-svg.pathmorphing.js@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.npmjs.org/svg.pathmorphing.js/-/svg.pathmorphing.js-0.1.3.tgz"
-  integrity sha512-49HWI9X4XQR/JG1qXkSDV8xViuTLIWm/B/7YuQELV5KMOPtXjiwH4XPJvr/ghEDibmLQ9Oc22dpWpG0vUDDNww==
-  dependencies:
-    svg.js "^2.4.0"
-
-svg.resize.js@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.npmjs.org/svg.resize.js/-/svg.resize.js-1.4.3.tgz"
-  integrity sha512-9k5sXJuPKp+mVzXNvxz7U0uC9oVMQrrf7cFsETznzUDDm0x8+77dtZkWdMfRlmbkEEYvUn9btKuZ3n41oNA+uw==
-  dependencies:
-    svg.js "^2.6.5"
-    svg.select.js "^2.1.2"
-
-svg.select.js@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.npmjs.org/svg.select.js/-/svg.select.js-2.1.2.tgz"
-  integrity sha512-tH6ABEyJsAOVAhwcCjF8mw4crjXSI1aa7j2VQR8ZuJ37H2MBUbyeqYr5nEO7sSN3cy9AR9DUwNg0t/962HlDbQ==
-  dependencies:
-    svg.js "^2.2.5"
-
-svg.select.js@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npmjs.org/svg.select.js/-/svg.select.js-3.0.1.tgz"
-  integrity sha512-h5IS/hKkuVCbKSieR9uQCj9w+zLHoPh+ce19bBYyqF53g6mnPB8sAtIbe1s9dh2S2fCmYX2xel1Ln3PJBbK4kw==
-  dependencies:
-    svg.js "^2.6.5"
 
 svgo@^0.7.0:
   version "0.7.2"
@@ -12142,6 +11947,11 @@ vary@~1.1.2:
   resolved "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
+vee-validate@^2.2.0:
+  version "2.2.15"
+  resolved "https://registry.npmjs.org/vee-validate/-/vee-validate-2.2.15.tgz"
+  integrity sha512-4TOsI8XwVkKVLkg8Nhmy+jyoJrR6XcTRDyxBarzcCvYzU61zamipS1WsB6FlDze8eJQpgglS4NXAS6o4NDPs1g==
+
 vendors@^1.0.0:
   version "1.0.4"
   resolved "https://registry.npmjs.org/vendors/-/vendors-1.0.4.tgz"
@@ -12165,11 +11975,6 @@ void-elements@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/void-elements/-/void-elements-2.0.1.tgz"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
-
-vue-apexcharts@^1.6.2:
-  version "1.6.2"
-  resolved "https://registry.npmjs.org/vue-apexcharts/-/vue-apexcharts-1.6.2.tgz"
-  integrity sha512-9HS3scJwWgKjmkcWIf+ndNDR0WytUJD8Ju0V2ZYcjYtlTLwJAf2SKUlBZaQTkDmwje/zMgulvZRi+MXmi+WkKw==
 
 vue-demi@^0.11.2:
   version "0.11.4"
@@ -12215,6 +12020,14 @@ vue-html-loader@^1.2.4:
     loader-utils "^1.0.2"
     object-assign "^4.1.0"
 
+vue-inputmask@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/vue-inputmask/-/vue-inputmask-0.2.1.tgz"
+  integrity sha512-T05NnZSjCq99cu4UOyzK0CIjvQm399G5BuoTWoS5udE3wRvflAPpUopOaRPbhu8YsKgWwKn2S+AslicFrXmy8g==
+  dependencies:
+    inputmask "^3.3.8"
+    vue "^2.4.2"
+
 vue-ladda@^0.0.15:
   version "0.0.15"
   resolved "https://registry.npmjs.org/vue-ladda/-/vue-ladda-0.0.15.tgz"
@@ -12237,6 +12050,11 @@ vue-loader@^15.2.4:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-notification@^1.3.20:
+  version "1.3.20"
+  resolved "https://registry.npmjs.org/vue-notification/-/vue-notification-1.3.20.tgz"
+  integrity sha512-vPj67Ah72p8xvtyVE8emfadqVWguOScAjt6OJDEUdcW5hW189NsqvfkOrctxHUUO9UYl9cTbIkzAEcPnHu+zBQ==
 
 vue-perfect-scrollbar@^0.2.1:
   version "0.2.1"
@@ -12274,7 +12092,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.5.16:
+vue@^2.4.2, vue@^2.5.16:
   version "2.6.14"
   resolved "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
@@ -12566,11 +12384,6 @@ which-module@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/which-module/-/which-module-2.0.0.tgz"
   integrity sha1-2e8H3Od7mQK4o6j6SzHD4/fm6Ho=
-
-which-pm-runs@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/which-pm-runs/-/which-pm-runs-1.0.0.tgz"
-  integrity sha1-Zws6+8VS4LVd9rd4DKdGFfI60cs=
 
 which@^1.1.1, which@^1.2.14, which@^1.2.9, which@^1.3.1:
   version "1.3.1"

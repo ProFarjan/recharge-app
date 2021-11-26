@@ -1,17 +1,35 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
+  <div
+      id="app"
+      ref="app"
+  >
+    <base-page v-if="!(this.$route.name == 'login-page' || this.$route.name == 'Forgot')">
+      <transition
+          name="custom-classes-transition"
+          enter-active-class="animated slideInLeft"
+          leave-active-class="animated slideOutRight"
+          :duration="{ enter: 800, leave: 0 }"
+      >
+        <router-view />
+      </transition>
+    </base-page>
+
+    <div v-else>
+      <router-view />
+    </div>
+    <notifications />
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'my-project'
-  }
+import BasePage from './components/lib/BasePage'
+
+export default {
+  components: {BasePage}
+}
 </script>
 
 <style>
-  @import "assets/css/themes/lite-purple.css";
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
