@@ -64,7 +64,7 @@
               <div class="mt-3 text-center">
                 <router-link
                     class="text-muted"
-                    to="/forgot"
+                    to="/"
                 >
                   Forgot Password?
                 </router-link>

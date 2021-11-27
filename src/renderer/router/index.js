@@ -13,17 +13,27 @@ export default new Router({
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: require('@/components/Dashboard').default
+      component: () => import(/* webpackChunkName: "dashboard" */ '@/components/Dashboard')
     },
     {
       path: '/recharge',
       name: 'recharge',
-      component: require('@/components/Recharge').default
+      component: () => import(/* webpackChunkName: "recharge" */ '@/components/Recharge')
     },
     {
       path: '/banking',
       name: 'banking',
-      component: require('@/components/Banking').default
+      component: () => import(/* webpackChunkName: "banking" */ '@/components/Banking')
+    },
+    {
+      path: '/received',
+      name: 'received',
+      component: () => import(/* webpackChunkName: "received" */ '@/components/Received')
+    },
+    {
+      path: '/setting',
+      name: 'setting',
+      component: () => import(/* webpackChunkName: "received" */ '@/components/Setting')
     }
   ]
 })

@@ -54,7 +54,7 @@
                     aria-expanded="false"
                     to="/recharge"
                 >
-                  <i class="i-Money-2 text-20 mr-2 text-muted" /><span
+                  <i class="i-Money-Bag text-20 mr-2 text-muted" /><span
                     class="item-name text-15 text-muted"
                     title="Ctrl+Shift+L"
                 >Recharge</span>
@@ -67,7 +67,7 @@
                     aria-expanded="false"
                     to="/banking"
                 >
-                  <i class="i-Students text-20 mr-2 text-muted" /><span
+                  <i class="i-Money-2 text-20 mr-2 text-muted" /><span
                     class="item-name text-15 text-muted"
                     title="Ctrl+Shift+S"
                 >Sent Money</span>
@@ -78,9 +78,9 @@
               >
                 <router-link
                     aria-expanded="false"
-                    to="/banking"
+                    to="/received"
                 >
-                  <i class="i-Students text-20 mr-2 text-muted" /><span
+                  <i class="i-Money text-20 mr-2 text-muted" /><span
                     class="item-name text-15 text-muted"
                     title="Ctrl+Shift+S"
                 >Received Money</span>
@@ -105,9 +105,9 @@
               >
                 <router-link
                     aria-expanded="false"
-                    to="/bank_reconciliation"
+                    to="/setting"
                 >
-                  <i class="i-Bank text-20 mr-2 text-muted" /><span
+                  <i class="i-Gear-2 text-20 mr-2 text-muted" /><span
                     class="item-name text-15 text-muted"
                     title="Ctrl+Shift+B"
                 >Setting</span>
