@@ -20,7 +20,7 @@
                   <form @submit.stop.prevent="createOperator">
 
                     <div class="form-group div_txt">
-                      <label style="font-size: 18px;font-weight: 600;" for="operator">Select Operator</label>
+                      <label style="font-size: 18px;font-weight: 600;" for="operator">System Type</label>
                       <v-select
                           id="operator"
                           v-model="fm.systemType"
@@ -78,7 +78,7 @@
                           name="operator"
                           :options="operators"
                           label="name"
-                          :reduce="operator => operator.id"
+                          :reduce="operator => operator.name"
                           placeholder="Choose an operator"
                       >
                         <template #search="{attributes, events}">
@@ -92,31 +92,49 @@
                     </div>
 
                     <div class="form-group div_txt">
-                      <label style="font-size: 18px;font-weight: 600;" for="b_ussd">Balance USSD</label>
+                      <label style="font-size: 18px;font-weight: 600;" for="port">GSM Port</label>
                       <b-form-input
-                          id="b_ussd"
-                          v-model="fm.balanceUSSD"
-                          type="b_ussd"
-                          name="text"
+                          placeholder="Enter Com Port"
+                          id="port"
+                          ref="port"
+                          v-model="fm.port"
                           v-validate="{ required: true }"
-                          :state="validateState('b_ussd')"
-                          aria-describedby="b_ussd"
-                          data-vv-as="b_ussd"></b-form-input>
-                      <b-form-invalid-feedback>{{ veeErrors.first('b_ussd') }}</b-form-invalid-feedback>
+                          :state="validateState('port')"
+                          aria-describedby="port"
+                          data-vv-as="port"
+                          trim
+                      />
+                      <b-form-invalid-feedback>{{ veeErrors.first('port') }}</b-form-invalid-feedback>
                     </div>
 
                     <div class="form-group div_txt">
-                      <label style="font-size: 18px;font-weight: 600;" for="s_ussd">Send USSD</label>
+                      <label style="font-size: 18px;font-weight: 600;" for="ussdSend">USSD Send { @phone, @amount }</label>
                       <b-form-input
-                          id="s_ussd"
-                          v-model="fm.sendUSSD"
-                          type="s_ussd"
-                          name="text"
+                          id="ussdSend"
+                          ref="ussdSend"
+                          v-model="fm.ussdSend"
                           v-validate="{ required: true }"
-                          :state="validateState('s_ussd')"
-                          aria-describedby="s_ussd"
-                          data-vv-as="s_ussd"></b-form-input>
-                      <b-form-invalid-feedback>{{ veeErrors.first('s_ussd') }}</b-form-invalid-feedback>
+                          :state="validateState('ussdSend')"
+                          aria-describedby="ussdSend"
+                          data-vv-as="ussdSend"
+                          trim
+                      />
+                      <b-form-invalid-feedback>{{ veeErrors.first('ussdSend') }}</b-form-invalid-feedback>
+                    </div>
+
+                    <div class="form-group div_txt">
+                      <label style="font-size: 18px;font-weight: 600;" for="ussdBalance">USSD Balance</label>
+                      <b-form-input
+                          id="ussdBalance"
+                          ref="ussdBalance"
+                          v-model="fm.ussdBalance"
+                          v-validate="{ required: true }"
+                          :state="validateState('ussdBalance')"
+                          aria-describedby="ussdBalance"
+                          data-vv-as="ussdBalance"
+                          trim
+                      />
+                      <b-form-invalid-feedback>{{ veeErrors.first('ussdBalance') }}</b-form-invalid-feedback>
                     </div>
 
                     <vue-ladda
@@ -139,17 +157,19 @@
               Lasted Recharge Records
             </div>
             <div class="card-body">
-              <b-table small :fields="fields" :items="items" responsive="sm">
-                <!-- A virtual column -->
-                <template #cell(sl)="data">
-                  {{ data.index + 1 }}
-                </template>
+              <div class="table table-responsive">
+                <b-table small :fields="fields" :items="items" responsive="sm">
+                  <!-- A virtual column -->
+                  <template #cell(sl)="data">
+                    {{ data.index + 1 }}
+                  </template>
 
-                <!-- Optional default data cell scoped slot -->
-                <template #cell()="data">
-                  <i>{{ data.value }}</i>
-                </template>
-              </b-table>
+                  <!-- Optional default data cell scoped slot -->
+                  <template #cell()="data">
+                    <i>{{ data.value }}</i>
+                  </template>
+                </b-table>
+              </div>
             </div>
           </div>
         </div>
@@ -165,13 +185,15 @@ export default {
   name: 'Setting',
   data: () => ({
     isSubmitted: false,
+    user: null,
     fm: {
       systemType: '',
       name: '',
       phone: '',
       operator: '',
-      sendUSSD: '',
-      balanceUSSD: ''
+      port: '',
+      ussdSend: '',
+      ussdBalance: ''
     },
     systemTypes: [
       {id: 'recharge', name: 'Recharge'},
@@ -181,21 +203,24 @@ export default {
       { id: 1, name: 'Greenphone', category: 'recharge' },
       { id: 2, name: 'Robi', category: 'recharge' },
       { id: 3, name: 'Aritel', category: 'recharge' },
-      { id: 4, name: 'bKash', category: 'banking' }
+      { id: 4, name: 'Teletalk', category: 'recharge' },
+      { id: 5, name: 'Banglalink', category: 'recharge' },
+      { id: 6, name: 'bKash', category: 'banking' },
+      { id: 7, name: 'Nagad', category: 'banking' },
+      { id: 8, name: 'Rocket', category: 'banking' },
+      { id: 9, name: 'Others', category: 'banking' }
     ],
     fields: [
       'sl',
-      'type',
+      'systype',
+      'name',
       'phone',
-      'amount',
-      'status'
+      'operator',
+      'port',
+      'ussdsend',
+      'ussdbalance'
     ],
-    items: [
-      { name: { first: 'John', last: 'Doe' }, type: 'Male', phone: 42, amount: 42, status: 'ok' },
-      { name: { first: 'Jane', last: 'Doe' }, type: 'Female', phone: 36, amount: 42, status: 'ok' },
-      { name: { first: 'Rubin', last: 'Kincade' }, type: 'Male', phone: 73, amount: 42, status: 'ok' },
-      { name: { first: 'Shirley', last: 'Partridge' }, type: 'Female', phone: 62, amount: 42, status: 'ok' }
-    ]
+    items: []
   }),
   methods: {
     validateState (ref) {
@@ -212,16 +237,57 @@ export default {
           return null
         }
         this.isSubmitted = true
-        setTimeout(() => {
+        const data = {
+          ussdsend: this.fm.ussdSend,
+          ussdbalance: this.fm.ussdBalance,
+          systype: this.fm.systemType,
+          name: this.fm.name,
+          phone: this.fm.phone,
+          operator: this.fm.operator,
+          port: this.fm.port,
+          userid: this.user.id
+        }
+        this.$http.post('index.php?table=gsm', data, {
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${this.user.accesToken}`
+          }
+        }).then(res => {
+          if (res.data.status === 'success') {
+            this.$notify({
+              type: 'success',
+              title: 'Submitted Done!',
+              text: 'Successfully Save Your ' + this.fm.port
+            })
+            this.items.push(data)
+            this.resetFM()
+          } else {
+            this.$notify({
+              type: 'warn',
+              title: 'Warning Message',
+              text: res.data.message
+            })
+          }
           this.isSubmitted = false
-          this.resetFM()
-          this.$refs['phone'].focus()
-        }, 1000)
+        })
       })
     },
     resetFM () {
-      this.fm.operator = this.fm.phone = this.fm.amount = ''
+      this.fm.operator = this.fm.phone = this.fm.port = this.fm.name = this.fm.ussdBalance = this.fm.ussdSend = this.fm.systemType = ''
     }
+  },
+  created () {
+    this.user = JSON.parse(localStorage.getItem('user'))
+    this.$http('index.php?table=gsm&isactive=1', {
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${this.user.accesToken}`
+      }
+    }).then(res => {
+      if (res.data.status === 'success') {
+        this.items = res.data.message
+      }
+    })
   }
 }
 </script>

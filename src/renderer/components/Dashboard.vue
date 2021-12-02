@@ -157,7 +157,7 @@
           <div class="card mb-4">
             <div class="card-body text-left">
               <div class="card-title">Banking Method Balance</div>
-              <div class="d-flex flex-column flex-sm-row align-items-sm-center mb-3"><img class="avatar-lg mb-3 mb-sm-0 rounded mr-sm-3" :src="logo" alt="" />
+              <div class="d-flex flex-column flex-sm-row align-items-sm-center mb-3"><img class="avatar-lg mb-3 mb-sm-0 rounded mr-sm-3" :src="icons.gp" alt="" />
                 <div class="flex-grow-1">
                   <h5><a href="">bKash (01966885733) -> Agent</a></h5>
                   <p class="m-0 text-small text-muted">
@@ -317,7 +317,10 @@ export default {
   name: 'Dashboard',
   data () {
     return {
-      logo: require('./../assets/images/Angular_Icon.png')
+      logo: require('./../assets/images/Angular_Icon.png'),
+      icons: {
+        gp: require('./../assets/images/gp.jpg')
+      }
     }
   }
 }

@@ -115,17 +115,14 @@
 export default {
   name: 'Recharge',
   data: () => ({
+    user: null,
     isSubmitted: false,
     fm: {
       phone: '',
       operator: '',
       amount: ''
     },
-    operators: [
-      { id: 1, name: 'GP', type: 'recharge', number: '01766885733', note: '' },
-      { id: 2, name: 'GP', type: 'recharge', number: '01716885733', note: '' },
-      { id: 3, name: 'BN', type: 'recharge', number: '01616885733', note: '' }
-    ],
+    operators: [],
     fields: [
       'sl',
       'type',
@@ -164,6 +161,25 @@ export default {
     },
     resetFM () {
       this.fm.operator = this.fm.phone = this.fm.amount = ''
+    }
+  },
+  created () {
+    this.user = JSON.parse(localStorage.getItem('user'))
+    const operator = localStorage.getItem('ROP')
+    if (operator) {
+      this.operators = JSON.parse(operator)
+    } else {
+      this.$http.get('index.php?table=gsm&systype=recharge', {
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${this.user.accesToken}`
+        }
+      }).then(res => {
+        if (res.data.status === 'success') {
+          this.operators = res.data.message
+          localStorage.setItem('ROP', JSON.stringify(this.operators))
+        }
+      })
     }
   }
 }

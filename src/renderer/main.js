@@ -1,3 +1,4 @@
+// import './firebase'
 import Vue from 'vue'
 import axios from 'axios'
 
@@ -6,6 +7,7 @@ import router from './router'
 import store from './store'
 import VueCompositionAPI from '@vue/composition-api'
 import VueLadda from 'vue-ladda'
+// import { rtdbPlugin } from 'vuefire'
 import { BootstrapVue } from 'bootstrap-vue'
 import vSelect from 'vue-select'
 import VeeValidate from 'vee-validate'
@@ -20,11 +22,15 @@ const VueInputMask = require('vue-inputmask').default
 Vue.prototype.$screenSize = screen.width
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
+
+axios.defaults.baseURL = 'http://localhost/api/'
 Vue.http = Vue.prototype.$http = axios
+
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueCompositionAPI)
 Vue.component('vue-ladda', VueLadda)
+// Vue.use(rtdbPlugin)
 Vue.component('v-select', vSelect)
 Vue.use(VeeValidate, {
   inject: true,

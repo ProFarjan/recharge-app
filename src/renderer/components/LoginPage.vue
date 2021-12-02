@@ -82,11 +82,12 @@ import User from '../model/User'
 export default {
   name: 'landing-page',
   data: () => ({
-    background: require('@/assets/images/photo-long-7.jpg'),
-    logo: require('@/assets/images/logo-text.png'),
+    background: require('@/assets/images/photo-wide-3.jpg'),
+    logo: require('@/assets/images/logo-text.jpg'),
     btn_loading: false,
     user: new User('', ''),
-    message: ''
+    message: '',
+    documents: []
   }),
   methods: {
     validateState (ref) {
@@ -104,11 +105,21 @@ export default {
           return null
         }
         this.btn_loading = true
-        localStorage.setItem('user', JSON.stringify(this.user))
-        setTimeout(() => {
-          this.btn_loading = false
-          this.$router.push('/dashboard')
-        }, 1000)
+        this.$http.post('login.php', {
+          username: this.user.username,
+          password: this.user.password
+        }).then(res => {
+          if (res.data.status === 'success') {
+            localStorage.setItem('user', JSON.stringify(res.data.message))
+            this.btn_loading = false
+            this.$router.push('/dashboard')
+          } else {
+            this.message = res.data.message
+          }
+          setTimeout(() => {
+            this.btn_loading = false
+          }, 1000)
+        })
       })
     }
   }

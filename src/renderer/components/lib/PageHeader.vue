@@ -61,6 +61,7 @@ export default {
   },
   methods: {
     logOut () {
+      localStorage.clear()
       this.$router.push('/')
       this.$root.$data.sidebarAnimation = 'sidebar-full'
     },
