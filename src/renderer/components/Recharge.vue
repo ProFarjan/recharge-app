@@ -58,7 +58,6 @@
                           name="operator"
                           :options="operators"
                           label="name"
-                          :reduce="operator => operator.id"
                           placeholder="Choose an operator"
                       >
                         <template #search="{attributes, events}">
@@ -189,7 +188,7 @@ export default {
     pageOptions: [5, 10, 15, { value: 100, text: 'Show a lot' }],
     fm: {
       phone: '',
-      operator: '',
+      operator: null,
       amount: ''
     },
     operators: [],
@@ -225,36 +224,42 @@ export default {
           return null
         }
         this.isSubmitted = true
-        this.$http.post('index.php?table=sent', {
-          gsmid: this.fm.operator,
-          phone: this.fm.phone,
-          amount: this.fm.amount,
-          userid: this.user.id,
-          sendingtime: new Date()
-        }, {
-          headers: {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${this.user.accesToken}`
-          }
-        }).then(res => {
-          if (res.data.status === 'success') {
-            this.resetFM()
-            this.$refs['phone'].focus()
-            this.$notify({
-              type: 'success',
-              title: 'success',
-              text: 'Send Request Successfully Submitted'
-            })
-            this.getLastItems()
-          } else {
-            this.$notify({
-              type: 'warn',
-              title: 'Warning',
-              text: res.data.message
-            })
-          }
-          this.isSubmitted = false
-        })
+        const serialPort = this.$root.$data.port[this.fm.operator.index]
+        const ussdPhone = this.fm.operator.ussdsend.replace('phone', this.fm.phone)
+        var ussd = ussdPhone.replace('amount', this.fm.amount)
+        if (ussd) {
+          this.$root.ussd(serialPort, ussd)
+          this.$http.post('index.php?table=sent', {
+            gsmid: this.fm.operator.id,
+            phone: this.fm.phone,
+            amount: this.fm.amount,
+            userid: this.user.id,
+            sendingtime: new Date().toJSON().slice(0, 19).replace('T', ' ')
+          }, {
+            headers: {
+              'Accept': 'application/json',
+              'Authorization': `Bearer ${this.user.accesToken}`
+            }
+          }).then(res => {
+            if (res.data.status === 'success') {
+              this.resetFM()
+              this.$refs['phone'].focus()
+              this.$notify({
+                type: 'success',
+                title: 'success',
+                text: 'Send Request Successfully Submitted'
+              })
+              this.getLastItems()
+            } else {
+              this.$notify({
+                type: 'warn',
+                title: 'Warning',
+                text: res.data.message
+              })
+            }
+            this.isSubmitted = false
+          })
+        }
       })
     },
     resetFM () {
@@ -280,22 +285,7 @@ export default {
   },
   created () {
     this.user = JSON.parse(localStorage.getItem('user'))
-    const operator = localStorage.getItem('ROP')
-    if (operator) {
-      this.operators = JSON.parse(operator)
-    } else {
-      this.$http.get('index.php?table=gsm&systype=recharge', {
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${this.user.accesToken}`
-        }
-      }).then(res => {
-        if (res.data.status === 'success') {
-          this.operators = res.data.message
-          localStorage.setItem('ROP', JSON.stringify(this.operators))
-        }
-      })
-    }
+    this.operators = this.$root.$data.gsm
     this.getLastItems()
   }
 }
