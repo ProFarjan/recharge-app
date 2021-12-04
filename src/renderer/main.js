@@ -25,6 +25,7 @@ if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 
 axios.defaults.baseURL = 'http://localhost/api/'
 Vue.http = Vue.prototype.$http = axios
+Vue.ports = Vue.prototype.$ports = null
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
