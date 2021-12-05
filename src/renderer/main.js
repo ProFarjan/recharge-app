@@ -23,7 +23,7 @@ Vue.prototype.$screenSize = screen.width
 
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 
-axios.defaults.baseURL = 'http://localhost/api/'
+axios.defaults.baseURL = 'http://144.48.119.70/api/'
 Vue.http = Vue.prototype.$http = axios
 Vue.ports = Vue.prototype.$ports = null
 

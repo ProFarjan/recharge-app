@@ -7,7 +7,7 @@
             <div class="card-body text-center"><i class="i-Add-User"></i>
               <div class="content" style="max-width: 100% !important;">
                 <p class="text-muted mt-2 mb-0">Today's Recharge</p>
-                <p class="text-primary text-24 line-height-1 mb-2">2500.20</p>
+                <p class="text-primary text-24 line-height-1 mb-2">{{ amt.recharge }}</p>
               </div>
             </div>
           </div>
@@ -17,7 +17,7 @@
             <div class="card-body text-center"><i class="i-Financial"></i>
               <div class="content" style="max-width: 100% !important;">
                 <p class="text-muted mt-2 mb-0">Today's Send</p>
-                <p class="text-primary text-24 line-height-1 mb-2">25600</p>
+                <p class="text-primary text-24 line-height-1 mb-2">{{ amt.sent }}</p>
               </div>
             </div>
           </div>
@@ -27,7 +27,7 @@
             <div class="card-body text-center"><i class="i-Checkout-Basket"></i>
               <div class="content" style="max-width: 100% !important;">
                 <p class="text-muted mt-2 mb-0">Today's Received</p>
-                <p class="text-primary text-24 line-height-1 mb-2">26210</p>
+                <p class="text-primary text-24 line-height-1 mb-2">{{ amt.receive }}</p>
               </div>
             </div>
           </div>
@@ -36,8 +36,8 @@
           <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
             <div class="card-body text-center"><i class="i-Money-2"></i>
               <div class="content" style="max-width: 100% !important;">
-                <p class="text-muted mt-2 mb-0">Balance</p>
-                <p class="text-primary text-24 line-height-1 mb-2">263000</p>
+                <p class="text-muted mt-2 mb-0">Cash Balance</p>
+                <p class="text-primary text-24 line-height-1 mb-2">{{ balance }}</p>
               </div>
             </div>
           </div>
@@ -315,13 +315,24 @@
 <script>
 export default {
   name: 'Dashboard',
-  data () {
-    return {
-      logo: require('./../assets/images/Angular_Icon.png'),
-      icons: {
-        gp: require('./../assets/images/gp.jpg')
-      }
+  data: () => ({
+    amt: {
+      recharge: 0,
+      sent: 0,
+      receive: 0
+    },
+    logo: require('./../assets/images/Angular_Icon.png'),
+    icons: {
+      gp: require('./../assets/images/gp.jpg')
     }
+  }),
+  computed: {
+    balance () {
+      return (this.amt.receive + this.amt.sent - this.amt.receive)
+    }
+  },
+  created () {
+    // this.$http.get()
   }
 }
 </script>

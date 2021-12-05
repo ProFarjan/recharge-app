@@ -1,6 +1,6 @@
 import SerialPort from 'serialport'
 import axios from 'axios'
-axios.defaults.baseURL = 'http://localhost/api/'
+axios.defaults.baseURL = 'http://144.48.119.70/api/'
 
 export default {
   data: () => ({
@@ -8,7 +8,6 @@ export default {
     accesToken: 'NGJiNTkwYjI4MzIxMzJhOGNmYzA1NWVjOWYzNWY3ZGE=',
     port: [],
     gsm: [],
-    url: 'http://localhost/api/',
     temp: '',
     rcv: []
   }),
