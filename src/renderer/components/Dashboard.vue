@@ -316,6 +316,7 @@
 export default {
   name: 'Dashboard',
   data: () => ({
+    user: null,
     amt: {
       recharge: 0,
       sent: 0,
@@ -332,7 +333,17 @@ export default {
     }
   },
   created () {
-    // this.$http.get()
+    this.user = JSON.parse(localStorage.getItem('user'))
+    this.$http.get('index.php?table=sent&DATE_FORMAT(`sendingtime`,"%Y-%m-%d")="' + new Date().toJSON().slice(0, 10) + '"&cols=sum(amount) as total', {
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${this.user.accesToken}`
+      }
+    }).then(res => {
+      if (res.data.status === 'success') {
+        this.amt.recharge = res.data.message[0].total
+      }
+    })
   }
 }
 </script>

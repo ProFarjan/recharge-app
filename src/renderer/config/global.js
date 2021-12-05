@@ -9,7 +9,10 @@ export default {
     port: [],
     gsm: [],
     temp: '',
-    rcv: []
+    rcv: [],
+    gsmRecharge: [],
+    gsmBanking: [],
+    log: []
   }),
   mounted () {
     var vm = this
@@ -21,11 +24,17 @@ export default {
     }).then(res => {
       if (res.data.status === 'success') {
         var i = 0
+        this.log.push(res.data)
         for (let g of res.data.message) {
           g.index = i
           vm.openPort(g)
           i++
           this.gsm.push(g)
+          if (g.systype === 'recharge') {
+            this.gsmRecharge.push(g)
+          } else {
+            this.gsmBanking.push(g)
+          }
         }
       } else {
         this.$notify({
